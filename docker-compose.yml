@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mini_login:
+    build: .
+    # 請把學號改成自己的（容器名稱也建議同步改）
+    container_name: mini_login_學號
+    environment:
+      # TODO: 改成你的學號
+      - OWNER=學號
+      - MODE=vuln
+    ports:
+      # 統一使用 5000
+      - "5000:5000"
+    restart: unless-stopped
